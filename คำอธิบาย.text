@@ -1,0 +1,62 @@
+ให้ทำการ npm init ติดตั้ง เราจะได้ไฟล์ package.json
+
+
+npm i --save express //Web application framework บน nodejs ทำหน้าที่ในการ routing middleware request response
+
+node inspect app.js //เอาไว้ใช้ในการ debug
+
+http.createServer(function(request, response) {
+}).listen(process.env.PORT || 3000); //ตัวอย่างการ Deloying application online
+
+npm i xxxx@4.13.10  //4 major 13 minor 10 patch
+npm i xxxx@4.13.x //เวอร์ชั่นหรือช่วงก็ได้ครับ npm i xxxx@">=4.12.0" or ">4.12.0"
+
+npm i connect --save //ติดตั้ง connect module
+
+Development Environment
+เก็บ Debug log //morgan
+บีบอัด Response //compression
+Parse ส่วน Body //body-parser
+Parse ส่วน Body //body-parser
+
+ไปที่ package.json
+    "morgan": "~1.6.0",
+    "compression": "~1.5.0",
+    "body-parser": "~1.13.0"
+    npm update
+
+set NODE_ENV=development //Cmd แล้วพิมพ์
+set NODE_ENV=production //Cmd แล้วพิมพ์
+
+export NODE_ENV=development //เรากำหนดใน server รับค่าเข้ามา โดยตรวจใน config
+export NODE_ENV=production //หากเราexport เป็นอย่างอื่นจะไม่แสดง
+node server //ทำการรัน
+
+
+view template engine สนใจตัวไหนเลือกเลย
+Jade , Mustache.js , Dust.js , Nunjucks , EJS , Template7 , jQuery Templating , doT
+Underscore , Pug , Marko , JsRender , Squirrelly
+
+npm install ejs
+
+แนะนำให้ลง Plugin JsonView google chome
+
+การเรียกใช้ Static file 
+var publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
+
+Syntax Scss http://sass-lang.com/guide
+
+ให้ทำการใช้คำสั่ง nodemon server //สำหรับการ reload auto
+
+app.set('view options', {delimiter: '?'}); //ปรับรูปแบบ จาก <% เป็น <?- เรียก Ending tags EJS
+
+"express-validator": "^2.14.0" //npm update
+
+
+
+
+
+วิธีใช้ github 
+git remote add origin server <server>
+git add *

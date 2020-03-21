@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><?= title ?></title>
+
+    <!-- กรณีไม่เจอ css มันจะไปเรียก sass ใน folder sass -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <!-- <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/jquery3.min.js"></script> -->
+
+</head>
+
+<body>
+    <!-- Top -->
+    <?- include('navbar') -?>
+    <!-- End Top -->
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col text-center">
+                <h1>Welcome to <?= title ?></h1>
+            </div>
+        </div>
+        <div class="row">
+            <h1>ยินดีต้อนรับ</h1>
+        </div>
+        <? if(loging){ ?>
+        <div class="row">
+            คุณเข้าสู่ระบบเรียบร้อยแล้ว
+        </div>
+        <form name="logout" method="POST" action="/logout"> <button type="submit"
+                class="btn btn-primary">ออกจากระบบ</button> </form>
+
+        <? }else{ ?>
+        <div class="row">
+            <form action="/login" name="login" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Frist name</label>
+                    <input name="fname" type="text" class="form-control" placeholder="Enter fname">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+            </form>
+        </div>
+        <? } ?>
+    </div>
+</body>
+
+</html>
